@@ -6,7 +6,6 @@
         <router-link tag="span" :to="{ name: 'CommentsPage', params: { id: movie.id } }" class="info-item">全部{{ movie.comments_count }}条</router-link>)
       </span>
     </h1>
-    <div class="tips">热门 / 最新 / 好友</div>
     <ul class="comment-list">
       <li class="comment-item" v-for="comment in movie.popular_comments" :key="comment.id">
         <comment-item :comment="comment"></comment-item>
