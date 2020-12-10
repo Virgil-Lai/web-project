@@ -4,6 +4,7 @@
       <a-col :span="8">
         <div class="poster-wrapper">
           <img class="poster" :src="movie.images.small" alt="">
+          <div class="poster-tips">更新描述或海报</div>
         </div>
       </a-col>
       <a-col :span="16">

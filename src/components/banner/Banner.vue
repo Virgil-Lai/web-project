@@ -4,12 +4,9 @@
       <a-col :span="2"></a-col>
       <a-col :span="20">
         <div class="search">
-          <router-link to="/" tag="div" class="title">豆瓣电影</router-link>
+          <router-link to="/" tag="div" class="title">烟火光影</router-link>
           <div class="search-input">
-            <div class="form-group">
-              <input class="search-movie-input form-control" placeholder="搜索电影、电视剧、综艺、影人" style="width: 400px" @keyup.enter="searchMovie" v-model="movieText"/>
-              <button v-show="moviesList.length > 0" class="search-button btn btn-danger" @click="cancelSearch" type="danger">取消搜索</button>
-            </div>
+
             <ul class="search-list" v-show="moviesList.length > 0">
               <li @click.prevent.stop="clearSearch(index)" v-for="(movie, index) in moviesList" :key="movie.id">
                 <search-list-movie-item :movie="movie"></search-list-movie-item>
@@ -22,10 +19,8 @@
           <router-link to="/rank" tag="li" class="navigation-item">排行榜</router-link>
           <router-link to="/category" tag="li" class="navigation-item">分类</router-link>
           <router-link to="/top250" tag="li" class="navigation-item">Top250</router-link>
-          <router-link to="/user-center" tag="li" class="navigation-item">个人中心</router-link>
-          <li class="navigation-item">
-            <a href="https://github.com/QianGuoqing/vue-douban-movie-web" target="_blank">Github源码地址</a>
-          </li>
+          <router-link to="/about" tag="li" class="navigation-item">关于我们</router-link>
+
         </ul>
       </a-col>
       <a-col :span="2"></a-col>
@@ -104,8 +99,8 @@
       .title
         font-size 30px
         line-height 45px
-        font-weight 700
-        color #2a8ccb
+        font-weight 900
+        color #4b9ea1
         cursor pointer
         transition all .3s
         &:hover

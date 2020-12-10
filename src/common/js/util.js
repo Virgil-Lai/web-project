@@ -23,30 +23,27 @@ function stringifyGenres(genres) {
 }
 
 function concatDirectors(directors, character) {
-  //let arr = []
-  //directors.forEach(item => {
-  //  arr.push(item.name)
-  //})
-  //return arr.join(character)
-  return directors.join(character)
+  let arr = []
+  directors.forEach(item => {
+    arr.push(item.name)
+  })
+  return arr.join(character)
 }
 
 function concatWriters(writers, character) {
-  //let arr = []
-  //writers.forEach(item => {
-  //  arr.push(item.name)
-  //})
-  //return arr.join(character)
-  return writers.join(character)
+  let arr = []
+  writers.forEach(item => {
+    arr.push(item.name)
+  })
+  return arr.join(character)
 }
 
 function concatCasts(casts, character) {
-  //let arr = []
-  //casts.forEach(item => {
-  //  arr.push(item.name)
-  //})
-  //return arr.join(character)
-  return casts.join(character)
+  let arr = []
+  casts.forEach(item => {
+    arr.push(item.name)
+  })
+  return arr.join(character)
 }
 
 function concatGenres(genres, character) {

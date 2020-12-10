@@ -73,6 +73,11 @@ export default new Router({
       path: '/user-center',
       name: 'UserCenter',
       component: () => import('../pages/user-center/UserCenter.vue')
+    },
+    {
+      path: '/about',
+      name: 'RankPage',
+      component: () => import('../pages/about/about.vue')
     }
   ]
 })

@@ -9,7 +9,7 @@
         </ul>
         <loading v-if="!movies.length"></loading>
         <ul class="movie-list" v-else>
-          <router-link tag="li" :to="{ name: 'MovieDetail', params: {id: movie.id} }" class="movie-item" v-for="movie in movies" :key="movie.id">
+          <router-link tag="li" :to="{ name: 'MovieDetail', params: {id: movie.id} }" class="movie-item" v-for="(movie,index) in movies" :key="movie.id">
             <movie-list-item>
               <img v-lazy="movie.images.small" alt="" class="image" slot="thumbnail">
               <div class="title" slot="title">{{ movie.title }} / {{ movie.original_title }}</div>
@@ -21,7 +21,7 @@
             </movie-list-item>
           </router-link>
         </ul>
-        <div class="load-more" @click="loadMore">加载更多</div>
+<!--        <div class="load-more" @click="loadMore">加载更多</div>-->
       </a-col>
       <a-col :span="6">
         <go-top></go-top>
@@ -47,22 +47,28 @@
     },
     data() {
       return {
-        categories: ['电影', '电视剧', '综艺', '动画', '纪录片', '短片',
+        categories: [
           '剧情', '爱情', '喜剧', '科幻', '动作', '悬疑', '犯罪',
-          '恐怖', '青春', '励志', '战争', '文艺', '黑色幽默', '传记',
-          '情色', '暴力', '音乐', '家庭', '大陆', '美国', '香港', '台湾',
-          '日本', '韩国', '英国', '法国', '德国', '意大利', '西班牙',
-          '印度', '泰国', '俄罗斯', '伊朗', '加拿大', '澳大利亚', '爱尔兰',
-          '瑞典', '巴西', '丹麦', '经典冷门', '佳片', '魔幻', '黑帮', '女性', '自定义标签'
+           '战争'
         ],
-        tag: '电影',
+        tag: '剧情',
         start: 0,
         movies: [],
         activeIndex: 0
       }
     },
     created() {
+
       this._getMoviesByTag(this.tag, this.start)
+      // getMoviesByUrl('http://localhost:5000/getMovieJson').then(res => {
+      //   res = res.data
+      //   // this.movies = res.subject
+      //   // this.movies=[]
+      //   // this.movies=res.subjects
+      //   this.movies.push(...res.subjects)
+      // }).catch(err => {
+      //   this.$message.error('获取分类数据失败')
+      // })
     },
     methods: {
       selectTag(index) {
@@ -77,11 +83,19 @@
         this._getMoviesByTag(this.tag, this.start)
       },
       _getMoviesByTag(tag, start) {
-        let tagSearch = `${API_TAG}?tag=${tag}&start=${start}`
-        getMoviesByUrl(tagSearch).then(res => {
+        let url='http://localhost:5000/getMovieJsonByTag/?tag='+tag+'&start='+start
+        console.log(url)
+        getMoviesByUrl(url).then(res => {
           res = res.data
-          // this.movies = res.subjects
+          // this.movies = res.subject
+          // this.movies=[]
+          // this.movies=res.subjects
           this.movies.push(...res.subjects)
+          // this.movies.append(res.subjects)
+          console.log(this.movies.length)
+          if(this.movies.length>20){
+            console.log(movies[22]["title"])
+          }
         }).catch(err => {
           this.$message.error('获取分类数据失败')
         })

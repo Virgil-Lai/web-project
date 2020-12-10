@@ -1,13 +1,15 @@
 <template>
   <div class="comment-item">
+    <img class="avatar" v-lazy="comment.author.avatar" alt="">
     <div class="content">
       <div class="name-star-date-useful">
         <div class="name-star-date">
           <span class="name">{{ comment.author.name }}</span>
+          <a-rate :defaultValue="comment.rating.value" allowHalf disabled/>
           <span class="date">{{ comment.created_at }}</span>
         </div>
         <div class="useful">
-
+          <span class="useful-count">{{ comment.useful_count }}</span>
           <span class="useful-button">有用</span>
         </div>
       </div>
@@ -52,7 +54,7 @@
         margin-bottom 5px
         .name-star-date
           .name
-            color #3576a8
+            color #63c779
             cursor pointer
             transition all .3s
             &:hover

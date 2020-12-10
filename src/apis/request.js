@@ -16,7 +16,8 @@ export function getMoviesByUrl(url) {
 // 获取正在热映的电影
 export function getMoviesInTheater() {
   return new Promise((resolve, reject) => {
-    axios.get('../../../static/resource/moviesJson').then(res => {
+    axios.get('http://localhost:5000/getMovieJson').then(res => {
+      console.log(res)
       resolve(res)
     }).catch(err => {
       reject(err)
@@ -27,7 +28,8 @@ export function getMoviesInTheater() {
 // 获取即将上映的电影
 export function getComingMovie() {
   return new Promise((resolve, reject) => {
-    axios.get('../../../static/resource/moviesJson').then(res => {
+    axios.get('http://localhost:5000/getMovieJson').then(res => {
+      console.log(res)
       resolve(res)
     }).catch(err => {
       reject(err)

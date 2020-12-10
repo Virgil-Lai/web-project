@@ -4,7 +4,7 @@
       <a-col :span="2"></a-col>
       <a-col :span="20">
         <div class="content">
-          &copy; CopyRight All Reserved. Made By Qian. {{ currentYear }} <a class="link" href="https://github.com/QianGuoqing/vue-douban-movie-web" target="_blank">[github]</a>
+          &copy; CopyRight All Reserved. Made By 烟火光影
         </div>
       </a-col>
       <a-col :span="2"></a-col>
@@ -17,7 +17,7 @@
     name: 'Footer',
     computed: {
       currentYear() {
-        return new Date().getFullYear() 
+        return new Date().getFullYear()
       }
     },
   }

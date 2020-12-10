@@ -15,7 +15,7 @@
       </a-col>
       <a-col :span="1"></a-col>
       <a-col :span="4">
-        <home-rank :weekly-rank="weeklyRankMovies"></home-rank>
+<!--        <home-rank :weekly-rank="weeklyRankMovies"></home-rank>-->
       </a-col>
       <a-col :span="2"></a-col>
     </a-row>
