@@ -79,8 +79,7 @@
         this.reviews = []
         let id = this.subjectId
         let API_URL = API_MOVIE_SUBJECT
-        let A=id+API_URL
-        getMoviesByUrl(API_URL).then(res => {
+        getMoviesByUrl(API_URL+id+'.json').then(res => {
           res = res.data
           this.movie = res
         }).catch(err => {
