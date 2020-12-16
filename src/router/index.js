@@ -50,19 +50,9 @@ export default new Router({
       component: () => import('../pages/top-250/Top250.vue')
     },
     {
-      path: '/celebrity/:id',
-      name: 'CelebrityPage',
-      component: () => import('../pages/celebrity-page/CelebrityPage.vue')
-    },
-    {
       path: '/subject/comments/:id',
       name: 'CommentsPage',
       component: () => import('../pages/comments-page/CommentsPage.vue')
-    },
-    {
-      path: '/subject/reviews/:id',
-      name: 'ReviewsPage',
-      component: () => import('../pages/reviews-page/ReviewsPage.vue')
     },
     {
       path: '/search-movie',

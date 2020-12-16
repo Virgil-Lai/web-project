@@ -1,12 +1,7 @@
 <template>
   <div class="movie-gallery">
     <h1 class="title">
-      {{ movie.title }}的视频和图片
-      <span class="info">(
-        <span class="info-item">预告片: 99</span> | 
-        <span class="info-item">图片: {{ movie.photos_count }}</span> | 
-        <span class="info-item">添加图片</span>)
-      </span>
+      {{ movie.title }}的图片
     </h1>
     <ul class="list">
       <li class="list-item" v-for="trailer in movie.trailers" :key="trailer.id">
