@@ -4,22 +4,20 @@
       <a-col :span="8">
         <div class="poster-wrapper">
           <img class="poster" :src="movie.images.small" alt="">
-          <div class="poster-tips">更新描述或海报</div>
         </div>
       </a-col>
       <a-col :span="16">
         <div class="introduction">
           <div class="item">
             <span class="item-key">导演: </span>
-            <router-link tag="span" :to="{ name: 'CelebrityPage', params: { id: director.id }}" class="item-value" v-for="director in movie.directors" :key="director.id">{{ director.name }}</router-link>
+            <a tag="span" :to="{ params: { id: director.id }}" class="item-value" v-for="director in movie.directors" :key="director.id">{{ director.name }}</a>
           </div>
           <div class="item">
             <span class="item-key">编剧: </span>
-            <router-link tag="span" :to="{ name: 'CelebrityPage', params: { id: writer.id }}" class="item-value" v-for="writer in movie.writers" :key="writer.id">{{ writer.name }}</router-link>
-          </div>
+            <span class="info-value">{{ concatGen(movie.writer) }}</span></div>
           <div class="item">
             <span class="item-key">主演: </span>
-            <router-link tag="span" :to="{ name: 'CelebrityPage', params: { id: cast.id }}" class="item-value" v-for="cast in movie.casts" :key="cast.id">{{ cast.name }}</router-link>
+            <a tag="span" :to="{  params: { id: cast.id }}" class="item-value" v-for="cast in movie.casts" :key="cast.id">{{ cast.name }}</a>
           </div>
           <div class="info">
             <span class="info-key">类型: </span>
