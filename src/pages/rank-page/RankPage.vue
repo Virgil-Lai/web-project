@@ -13,12 +13,12 @@
       </a-col>
       <a-col :span="1"></a-col>
       <a-col :span="6">
-        <loading v-if="!weeklyMovies.length"></loading>
-        <movie-rank title="本周口碑榜" :movies="weeklyMovies"></movie-rank>
-        <loading v-if="!usMovies.length"></loading>
-        <movie-rank v-else title="北美票房榜" :movies="usMovies" :toggle="false"></movie-rank>
-        <loading v-if="!topMovies.length"></loading>
-        <top-movie v-else :movies="topMovies"></top-movie>
+<!--        <loading v-if="!weeklyMovies.length"></loading>-->
+<!--        <movie-rank title="本周口碑榜" :movies="weeklyMovies"></movie-rank>-->
+<!--        <loading v-if="!usMovies.length"></loading>-->
+<!--        <movie-rank v-else title="北美票房榜" :movies="usMovies" :toggle="false"></movie-rank>-->
+<!--        <loading v-if="!topMovies.length"></loading>-->
+<!--        <top-movie v-else :movies="topMovies"></top-movie>-->
       </a-col>
       <a-col :span="2"></a-col>
     </a-row>
