@@ -35,7 +35,7 @@ methods: {
           this.ruleForm.password='';
           return
         } else{
-          alert（"登陆成功！"）
+          alert("登陆成功！")
               this.$router.push("/index")
         }
       });

@@ -9,6 +9,7 @@
         </div>
         <loading v-if="!newMovies.length"></loading>
         <new-rank v-else :movies="newMovies"></new-rank>
+        <div class="load-more" @click="_getMoviesByTag">点击加载更多</div>
       </a-col>
       <a-col :span="1"></a-col>
       <a-col :span="6">
@@ -73,6 +74,30 @@
       }).catch(err => {
         console.log('top250', err)
       })
+    },
+    methods:{
+      loadMore() {
+        // this.start = 0
+        this._getMoviesByTag()
+      },
+      _getMoviesByTag() {
+        // let url='http://localhost:5000/getMovieJsonByTag/?tag='+tag+'&start='+start
+        // console.log(url)
+        getMoviesByUrl(API_WEEKLY).then(res => {
+          res = res.data
+          // this.movies = res.subject
+          // this.movies=[]
+          // this.movies=res.subjects
+          this.newMovies.push(...res.subjects)
+          // this.movies.append(res.subjects)
+          // console.log(this.newMovies.length)
+          // if(this.newMovies.length>20){
+          //   console.log(movies[22]["title"])
+          // }
+        }).catch(err => {
+          this.$message.error('获取分类数据失败')
+        })
+      },
     }
   }
 </script>

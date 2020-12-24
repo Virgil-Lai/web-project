@@ -78,21 +78,14 @@
         this.movie = {}
         this.reviews = []
         let id = this.subjectId
-        let API_URL = API_MOVIE_SUBJECT
-        getMoviesByUrl(API_URL+id+'.json').then(res => {
+        // let API_URL = API_MOVIE_SUBJECT
+        getMoviesByUrl('http://localhost:5000/getMovieDetail/?id='+id).then(res => {
           res = res.data
           this.movie = res
         }).catch(err => {
           this.$message.error('获取电影详情信息出错')
         })
 
-        let REVIEWS_URL = API_MOVIE_REVIEWS
-        getMoviesByUrl(REVIEWS_URL).then(res => {
-          res = res.data
-          this.reviews = res.reviews
-        }).catch(err => {
-          this.$message.error('获取评论信息出错')
-        })
       }
     },
   }
