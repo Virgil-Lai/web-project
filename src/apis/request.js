@@ -5,11 +5,11 @@ axios.defaults.withCredentials = true
 
 export function getMoviesByUrl(url) {
   return new Promise((resolve, reject) => {
-    axios.get(url).then(res => {
-      resolve(res)
-    }).catch(err => {
-      reject(err)
-    })
+        axios.get("http://localhost:5000/getMovieDetil?id="+id).then(res => {
+          resolve(res)
+        }).catch(err => {
+          reject(err)
+        })
   })
 }
 
