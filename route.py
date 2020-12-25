@@ -27,7 +27,7 @@ CORS(app, resources=r'/*')
 
 @app.route('/getMovieJson', methods=['GET', 'POST'])
 def getAllMovies():
-    with open(r'C:\Users\lwj\Desktop\web-project\static\resource\moviesJson',"r",encoding='utf-8') as json_file:
+    with open(r'D:\大三上\web\web大项目\web-project\static\resource\moviesJson',"r",encoding='utf-8') as json_file:
         config = json.load(json_file)
         # return_data=jsonify(config)
         res=make_response(config)
@@ -52,7 +52,7 @@ def getMovieByTag():
     print("Start="+start)
     if(tag=='电影'):
         n=0
-        with open(r'C:\Users\lwj\Desktop\web-project\static\resource\moviesJson', "r",
+        with open(r'D:\大三上\web\web大项目\web-project\static\resource\moviesJson', "r",
                   encoding='utf-8') as json_file:
             config = json.load(json_file)
             subject=config["subjects"]
@@ -84,7 +84,7 @@ def getMovieByTag():
     else:
         n = 1
         j = 0
-        with open(r'C:\Users\lwj\Desktop\web-project\static\resource\moviesJson',"r",encoding='utf-8') as json_file:
+        with open(r'D:\大三上\web\web大项目\web-project\static\resource\moviesJson',"r",encoding='utf-8') as json_file:
             config = json.load(json_file)
             subject=config["subjects"]
             for each in subject:

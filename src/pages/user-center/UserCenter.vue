@@ -96,6 +96,7 @@ export default {
         return
       }
       if(this.if_right()){
+        localStorage.setItem("login_token",username);
         this.$message.success('登陆成功')
         this.$store.commit('changeLoginStatus', true)
         this.$router.push('/')

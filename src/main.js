@@ -27,3 +27,36 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.title) {
+//     document.title = to.meta.title
+//   }
+//     if (to.meta.title === 'detail') {
+//       if(!isLogin){
+//         alert("here")
+//         next('/user-center')
+//       }
+//       else{
+//         alert("here2")
+//         next()
+//       }
+//     } else {
+//       alert("here1")
+//       next()
+//     }
+// })
+
+router.beforeEach(function (to,form,next){
+  if(to.meta.needLogin){
+    if(localStorage.getItem("login_token")){
+      next();
+    }
+    else {
+      next({
+        name:'UserCenter'
+      });
+    }
+  }
+  else
+    next();
+})
