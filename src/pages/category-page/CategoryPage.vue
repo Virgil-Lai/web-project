@@ -21,7 +21,6 @@
             </movie-list-item>
           </router-link>
         </ul>
-<!--        <div class="load-more" @click="loadMore">加载更多</div>-->
       </a-col>
       <a-col :span="6">
         <go-top></go-top>
@@ -79,7 +78,7 @@
         this._getMoviesByTag(this.tag, this.start)
       },
       loadMore() {
-        this.start += 20
+        this.start = 0
         this._getMoviesByTag(this.tag, this.start)
       },
       _getMoviesByTag(tag, start) {
