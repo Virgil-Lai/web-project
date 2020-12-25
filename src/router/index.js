@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 Vue.use(Router)
 
 export default new Router({
@@ -12,37 +11,60 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: () => import('../pages/home/Home.vue')
+      component: () => import('../pages/home/Home.vue'),
+      meta: {
+        title: 'home'
+      }
     },
     {
       path: '/theater',
       name: 'MovieInTheater',
-      component: () => import('../pages/in-theater/MovieInTheater.vue')
+      component: () => import('../pages/in-theater/MovieInTheater.vue'),
+      meta: {
+        title: 'theater'
+      }
     },
     {
       path: '/coming',
       name: 'ComingMovies',
-      component: () => import('../pages/coming-movies/ComingMovies.vue')
+      component: () => import('../pages/coming-movies/ComingMovies.vue'),
+      meta: {
+        title: 'coming'
+      }
     },
     {
       path: '/movies-info',
       name: 'MoviesInfo',
-      component: () => import('../pages/movies-info/MoviesInfo.vue')
+      component: () => import('../pages/movies-info/MoviesInfo.vue'),
+      meta: {
+        title: 'info'
+      }
     },
     {
       path: '/rank',
       name: 'RankPage',
-      component: () => import('../pages/rank-page/RankPage.vue')
+      component: () => import('../pages/rank-page/RankPage.vue'),
+      meta: {
+        title: 'rank'
+      }
     },
     {
       path: '/category',
       name: 'CategoryPage',
-      component: () => import('../pages/category-page/CategoryPage.vue')
+      component: () => import('../pages/category-page/CategoryPage.vue'),
+      meta: {
+        title: 'category'
+      }
     },
     {
       path: '/subject/:id',
       name: 'MovieDetail',
-      component: () => import('../pages/movie-detail/MovieDetail.vue')
+      component: () => import('../pages/movie-detail/MovieDetail.vue'),
+      meta: {
+        title: 'detail',
+        needLogin:true
+      }
+
     },
     {
       path: '/top250',
@@ -62,7 +84,10 @@ export default new Router({
     {
       path: '/user-center',
       name: 'UserCenter',
-      component: () => import('../pages/user-center/UserCenter.vue')
+      component: () => import('../pages/user-center/UserCenter.vue'),
+      meta: {
+        title: 'login'
+      }
     },
     {
       path: '/about',

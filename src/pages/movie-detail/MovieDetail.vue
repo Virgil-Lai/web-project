@@ -59,10 +59,12 @@
       GoTop
     },
     created() {
-      this._getData()
+        this._getData()
+
     },
     activated() {
       this._getData()
+
     },
     computed: {
       subjectId() {
@@ -71,14 +73,15 @@
     },
     methods: {
       _getData() {
-        this.movie = {}
-        let id = this.subjectId
-        getMoviesByUrl("http://localhost:5000/getMovieDetil?id="+id).then(res => {
-          res = res.data
-          this.movie = res
-        }).catch(err => {
-          this.$message.error('获取电影详情信息出错')
-        })
+          this.movie = {}
+          let id = this.subjectId
+          let API_URL = API_MOVIE_SUBJECT
+          getMoviesByUrl(API_URL+id+'.json').then(res => {
+            res = res.data
+            this.movie = res
+          }).catch(err => {
+            this.$message.error('获取电影详情信息出错')
+          })
 
       }
     },

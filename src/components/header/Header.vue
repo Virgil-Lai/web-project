@@ -25,6 +25,7 @@
           title: '注销信息',
           content: '确定要退出登录吗？',
           onOk() {
+            localStorage.setItem('login_token', '')
             that.$store.commit('changeLoginStatus', false)
           },
           onCancel() {

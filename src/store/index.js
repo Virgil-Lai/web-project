@@ -8,8 +8,8 @@ const store = new Vuex.Store({
     isLogin: false,
     searchMovieText: '',
     user: {
-      username: 'admin',
-      password: 'admin'
+      username: '',
+      password: ''
     }
   },
   mutations: {
