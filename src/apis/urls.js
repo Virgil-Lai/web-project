@@ -16,6 +16,9 @@ export const API_TOP_250_BY_COUNT = `../../../static/resource/moviesJson`
 
 export const API_MOVIE_SUBJECT = `../../../static/resource/movie-detail`
 
+// 长评
+// export const API_MOVIE_REVIEWS = `/api/movie/subject/:id/reviews?apikey=0b2bdeda43b5688921839c8ecb20399b`
+export const API_MOVIE_REVIEWS = `../../../static/resource/moviesJson`
 // 短评
 // export const API_MOVIE_COMMENTS = `/api/movie/subject/:id/comments?apikey=0b2bdeda43b5688921839c8ecb20399b`
 export const API_MOVIE_COMMENTS = `../../../static/resource/moviesJson`

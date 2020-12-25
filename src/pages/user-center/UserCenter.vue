@@ -101,8 +101,6 @@ export default {
         this.$store.commit('changeLoginStatus', true)
         this.$router.push('/')
       }
-
-
     },
     doLoginCancel() {
       this.loginUser.username = ''
@@ -119,7 +117,6 @@ export default {
         this.$message.error('注册失败-输入内容不能为空')
         return
       }
-
       var reg=/^[a-zA-Z0-9]{6,12}$/;
       if(reg.test(password)==false){
         this.$message.error('密码格式不正确，应包含字母和数字，并且6-12位')
@@ -152,7 +149,6 @@ export default {
       this.$message.error('取消注册')
     },
     callback(key) {
-
     },
     //设置cookie
     setCookie(c_name, c_pwd, exdays) {
@@ -160,7 +156,6 @@ export default {
       exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * exdays); //保存的天数
       //字符串拼接cookie
       window.document.cookie =c_name + "=" +c_pwd+ ";path=/;expires=" + exdate.toGMTString();
-
     },
     //读取cookie
     getCookie: function() {
@@ -170,9 +165,8 @@ export default {
         for (var i = 0; i < arr.length; i++) {
           var arr2 = arr[i].split("="); //再次切割
           //判断查找相对应的值
-            this.loginUser.username = arr2[0]; //保存到保存数据的地方
-            this.loginUser.password = arr2[1];
-
+          this.loginUser.username = arr2[0]; //保存到保存数据的地方
+          this.loginUser.password = arr2[1];
         }
       }
     },
