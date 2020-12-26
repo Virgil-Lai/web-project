@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import { Encrypt } from '@/util/secret.js'
 import {
   mapState
 } from 'vuex'
