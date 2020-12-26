@@ -61,8 +61,6 @@
 </template>
 
 <script>
-import { Encrypt } from "../../util/secret"
-import {Decrypt} from "../../util/secret"
 import {
   mapState
 } from 'vuex'
@@ -120,7 +118,7 @@ export default {
         return
       }
       var reg=/^[a-zA-Z0-9]{6,12}$/;
-      if(reg.test(password)===false){
+      if(reg.test(password)==false){
         this.$message.error('密码格式不正确，应包含字母和数字，并且6-12位')
         return
       }
@@ -130,7 +128,7 @@ export default {
       }
       this.$store.commit('registerUser', {
         username: username,
-        password: Encrypt(password)
+        password: password
       })
       let userDetail = {
         username: this.registerUser.username,
@@ -179,7 +177,7 @@ export default {
         for (var i = 0; i < arr.length; i++) {
           var arr2 = arr[i].split("="); //再次切割
           //判断查找相对应的值
-          if (this.loginUser.username === arr2[0]&&this.loginUser.password === arr2[1]) {
+          if (this.loginUser.username == arr2[0]&&this.loginUser.password == arr2[1]) {
             return true;
           }
         }
